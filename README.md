@@ -17,7 +17,7 @@ fallback value.
 
 ```go
 import (
-    "github.com/gowebly/helpers"
+    gowebly "github.com/gowebly/helpers"
 )
 
 // Get a value of the environment variable 'BACKEND_PORT' 
@@ -35,8 +35,8 @@ Helper to parse list of the given templates to the HTTP handler.
 ```go
 import (
     "log/slog"
-    
-    "github.com/gowebly/helpers"
+
+    gowebly "github.com/gowebly/helpers"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -69,10 +69,10 @@ Helpers to create a custom handler for serve embed `./static` folder.
 
 ```go
 import (
-	"embed"
-	"net/http"
+    "embed"
+    "net/http"
 
-	"github.com/gowebly/helpers"
+    gowebly "github.com/gowebly/helpers"
 )
 
 //go:embed static/*

@@ -17,7 +17,7 @@ import (
 //	import (
 //		"log/slog"
 //
-//		"github.com/gowebly/helpers"
+//		gowebly "github.com/gowebly/helpers"
 //	)
 //
 //	func handler(w http.ResponseWriter, r *http.Request) {

@@ -13,7 +13,7 @@ import (
 //		"embed"
 //		"net/http"
 //
-//		"github.com/gowebly/helpers"
+//		gowebly "github.com/gowebly/helpers"
 //	)
 //
 //	//go:embed static/*

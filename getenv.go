@@ -12,7 +12,7 @@ import (
 // Example:
 //
 //	import (
-//		"github.com/gowebly/helpers"
+//		gowebly "github.com/gowebly/helpers"
 //	)
 //
 //	// Get a value of the environment variable 'BACKEND_PORT' or sets it to a fallback value '5000'.
