@@ -10,6 +10,24 @@ A most useful helpers for build the best **Go** web applications with
 
 ## 📖 List of helpers
 
+### `gowebly.Getenv`
+
+Helper to get the given environment variable. If key is not found, sets a 
+fallback value.
+
+```go
+import (
+    "github.com/gowebly/helpers"
+)
+
+// Get a value of the environment variable 'BACKEND_PORT' 
+// or sets it to a fallback value '5000'.
+gowebly.Getenv("BACKEND_PORT", "5000")
+```
+
+> 💡 Note: This is a more advanced version of the built-in 
+> [os.Getenv][go_os_getenv_url] function.
+
 ### `gowebly.ParseTemplates`
 
 Helper to parse list of the given templates to the HTTP handler.
@@ -80,6 +98,7 @@ under the [Apache 2.0 License][repo_license_url], created and supported by
 [go_version_img]: https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go
 [go_code_coverage_img]: https://img.shields.io/badge/code_coverage-0%25-success?style=for-the-badge&logo=none
 [go_report_img]: https://img.shields.io/badge/Go_report-A+-success?style=for-the-badge&logo=none
+[go_os_getenv_url]: https://pkg.go.dev/os#Getenv
 
 <!-- Repository links -->
 
