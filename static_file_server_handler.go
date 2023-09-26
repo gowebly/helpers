@@ -5,8 +5,7 @@ import (
 	"net/http"
 )
 
-// StaticFileServerHandler handles a custom handler for serve static folder in
-// the file system.
+// StaticFileServerHandler handles a custom handler for serve embed static folder.
 //
 // Example:
 //
