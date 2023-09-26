@@ -26,8 +26,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
     indexPage := filepath.Join("templates", "pages", "index.html")
     indexLoginForm := filepath.Join("templates", "components", "index-login-form.html")
     
-    // Parse user templates or return error.
-    tmpl, err := gowebly.ParseTemplates(indexPage, indexLoginForm) // gowebly helper
+    // Parse user templates, using gowebly helper, or return error.
+    tmpl, err := gowebly.ParseTemplates(indexPage, indexLoginForm)
     if err != nil {
         w.WriteHeader(http.StatusBadRequest)
         slog.Error(err.Error(), "method", r.Method, "status", http.StatusBadRequest, "path", r.URL.Path)
@@ -60,8 +60,11 @@ import (
 //go:embed static/*
 var static embed.FS
 
+// Create the gowebly helper for serve embed static folder.
+staticFileServer := gowebly.StaticFileServerHandler(http.FS(static))
+
 // Handle static files (with a custom handler).
-http.Handle("/static/", gowebly.StaticFileServerHandler(http.FS(static))) // gowebly helper
+http.Handle("/static/", staticFileServer)
 ```
 
 ## ⚠️ License
