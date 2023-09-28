@@ -63,6 +63,44 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 > 💡 Note: The main layout template (`templates/main.html`) is already included.
 
+### `gowebly.ParseTemplatesWithCustomMainLayout`
+
+Helper to parse a list of the given templates with a custom main layout to 
+the HTTP handler. Useful to use at times when you want to override file name of
+the default `templates/main.html` layout template.
+
+```go
+import (
+    "log/slog"
+
+    gowebly "github.com/gowebly/helpers"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+    // Define path to the main layout template.
+    customMainLayout := filepath.Join("templates", "my-custom-main.html")
+    
+    // Define paths to the user templates.
+    indexPage := filepath.Join("templates", "pages", "index.html")
+    indexLoginForm := filepath.Join("templates", "components", "index-login-form.html")
+    
+    // Parse user templates or return error.
+    tmpl, err := gowebly.ParseTemplatesWithCustomMainLayout(customMainLayout, indexPage, indexLoginForm)
+    if err != nil {
+        w.WriteHeader(http.StatusBadRequest)
+        slog.Error(err.Error(), "method", r.Method, "status", http.StatusBadRequest, "path", r.URL.Path)
+        return
+    }
+    
+    // Execute (render) all templates or return error.
+    if err := tmpl.Execute(w, nil); err != nil {
+        w.WriteHeader(http.StatusInternalServerError)
+        slog.Error(err.Error(), "method", r.Method, "status", http.StatusInternalServerError, "path", r.URL.Path)
+        return
+    }
+}
+```
+
 ### `gowebly.StaticFileServerHandler`
 
 Helpers to create a custom handler for serve embed `./static` folder.
