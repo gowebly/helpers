@@ -134,7 +134,7 @@ under the [Apache 2.0 License][repo_license_url], created and supported by
 [go_report_url]: https://goreportcard.com/report/github.com/gowebly/helpers
 [go_dev_url]: https://pkg.go.dev/github.com/gowebly/helpers
 [go_version_img]: https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go
-[go_code_coverage_img]: https://img.shields.io/badge/code_coverage-0%25-success?style=for-the-badge&logo=none
+[go_code_coverage_img]: https://img.shields.io/badge/code_coverage-11.5%25-success?style=for-the-badge&logo=none
 [go_report_img]: https://img.shields.io/badge/Go_report-A+-success?style=for-the-badge&logo=none
 [go_os_getenv_url]: https://pkg.go.dev/os#Getenv
 
