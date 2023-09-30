@@ -1,4 +1,4 @@
-# gowebly helpers
+# Helpers for the `gowebly` CLI (and not so)
 
 [![Go version][go_version_img]][go_dev_url]
 [![Go report][go_report_img]][go_report_url]
@@ -6,7 +6,9 @@
 [![License][repo_license_img]][repo_license_url]
 
 A most useful helpers for build the best **Go** web applications with 
-[`gowebly`][gowebly_url] CLI.
+[`gowebly`][gowebly_url] CLI. 
+
+> 💡 Note: You can use these helpers in other projects as well.
 
 ## 📖 List of helpers
 
