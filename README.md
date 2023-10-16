@@ -5,8 +5,7 @@
 [![Code coverage][go_code_coverage_img]][repo_url]
 [![License][repo_license_img]][repo_license_url]
 
-A most useful helpers for build the best **Go** web applications with 
-[`gowebly`][gowebly_url] CLI. 
+A most useful helpers for build the best **Go** web applications with [`gowebly`][gowebly_url] CLI.
 
 > 💡 Note: You can use these helpers in other projects as well.
 
@@ -14,20 +13,19 @@ A most useful helpers for build the best **Go** web applications with
 
 ### `gowebly.Getenv`
 
-Helper to get the given environment variable. If key is not found, sets a 
-fallback value.
+Helper to get the given environment variable. If key is not found, sets a fallback value.
 
 ```go
 import (
     gowebly "github.com/gowebly/helpers"
 )
 
-// Get a value of the environment variable 'BACKEND_PORT' 
+// Get a value of the environment variable 'BACKEND_PORT'
 // or sets it to a fallback value '5000'.
 gowebly.Getenv("BACKEND_PORT", "5000")
 ```
 
-> 💡 Note: This is a more advanced version of the built-in 
+> 💡 Note: This is a more advanced version of the built-in
 > [os.Getenv][go_os_getenv_url] function.
 
 ### `gowebly.ParseTemplates`
@@ -45,7 +43,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
     // Define paths to the user templates.
     indexPage := filepath.Join("templates", "pages", "index.html")
     indexLoginForm := filepath.Join("templates", "components", "index-login-form.html")
-    
+
     // Parse user templates, using gowebly helper, or return error.
     tmpl, err := gowebly.ParseTemplates(indexPage, indexLoginForm)
     if err != nil {
@@ -53,7 +51,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
         slog.Error(err.Error(), "method", r.Method, "status", http.StatusBadRequest, "path", r.URL.Path)
         return
     }
-    
+
     // Execute (render) all templates or return error.
     if err := tmpl.Execute(w, nil); err != nil {
         w.WriteHeader(http.StatusInternalServerError)
@@ -67,9 +65,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 ### `gowebly.ParseTemplatesWithCustomMainLayout`
 
-Helper to parse a list of the given templates with a custom main layout to 
-the HTTP handler. Useful to use at times when you want to override file name of
-the default `templates/main.html` layout template.
+Helper to parse a list of the given templates with a custom main layout to the HTTP handler. Useful to use at times when you want to override file name of the default `templates/main.html` layout template.
 
 ```go
 import (
@@ -81,11 +77,11 @@ import (
 func handler(w http.ResponseWriter, r *http.Request) {
     // Define path to the main layout template.
     customMainLayout := filepath.Join("templates", "my-custom-main.html")
-    
+
     // Define paths to the user templates.
     indexPage := filepath.Join("templates", "pages", "index.html")
     indexLoginForm := filepath.Join("templates", "components", "index-login-form.html")
-    
+
     // Parse user templates or return error.
     tmpl, err := gowebly.ParseTemplatesWithCustomMainLayout(customMainLayout, indexPage, indexLoginForm)
     if err != nil {
@@ -93,7 +89,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
         slog.Error(err.Error(), "method", r.Method, "status", http.StatusBadRequest, "path", r.URL.Path)
         return
     }
-    
+
     // Execute (render) all templates or return error.
     if err := tmpl.Execute(w, nil); err != nil {
         w.WriteHeader(http.StatusInternalServerError)
@@ -127,9 +123,7 @@ http.Handle("/static/", staticFileServer)
 
 ## ⚠️ License
 
-[`gowebly helpers`][repo_url] is free and open-source software licensed 
-under the [Apache 2.0 License][repo_license_url], created and supported by 
-[Vic Shóstak][author_url] with 🩵 for people and robots.
+[`gowebly helpers`][repo_url] is free and open-source software licensed under the [Apache 2.0 License][repo_license_url], created and supported by [Vic Shóstak][author_url] with 🩵 for people and robots.
 
 <!-- Go links -->
 
