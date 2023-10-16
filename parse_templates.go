@@ -46,8 +46,8 @@ func ParseTemplates(names ...string) (*template.Template, error) {
 		filepath.Join("templates", "main.html"),
 	}
 
+	// Check if all templates exist.
 	for _, n := range names {
-		// Check, if the given template is existing.
 		if !isExistInFolder(n, false) {
 			return nil, fmt.Errorf("os: template '%s' is not found", n)
 		}
@@ -56,7 +56,7 @@ func ParseTemplates(names ...string) (*template.Template, error) {
 	// Add all user templates after global.
 	global = append(global, names...)
 
-	return template.Must(template.ParseFiles(global...)), nil
+	return template.ParseFiles(global...)
 }
 
 // ParseTemplatesWithCustomMainLayout parses list of the given templates with a
@@ -95,17 +95,18 @@ func ParseTemplates(names ...string) (*template.Template, error) {
 //	}
 func ParseTemplatesWithCustomMainLayout(main string, names ...string) (*template.Template, error) {
 	// Set global templates.
-	global := []string{main}
+	global := make([]string, 0, len(names)+1)
+	global = append(global, main)
 
 	for _, n := range names {
 		// Check, if the given template is existing.
 		if !isExistInFolder(n, false) {
 			return nil, fmt.Errorf("os: template '%s' is not found", n)
 		}
-	}
 
-	// Add all user templates after global.
-	global = append(global, names...)
+		// Add the given template after global.
+		global = append(global, n)
+	}
 
 	return template.Must(template.ParseFiles(global...)), nil
 }
@@ -113,11 +114,17 @@ func ParseTemplatesWithCustomMainLayout(main string, names ...string) (*template
 // isExistInFolder searches for a file or folder by the given name in the
 // current folder.
 func isExistInFolder(name string, isFolder bool) bool {
-	// Check, if file or folder is existing.
-	info, err := os.Stat(filepath.Clean(name))
-	if err == nil || !os.IsNotExist(err) {
-		return info.IsDir() == isFolder
+	// Check if file or folder exists.
+	_, err := os.Stat(filepath.Clean(name))
+	if err != nil {
+		return false
 	}
 
-	return false
+	// Check if it is a directory.
+	info, err := os.Lstat(filepath.Clean(name))
+	if err != nil {
+		return false
+	}
+
+	return info.IsDir() == isFolder
 }

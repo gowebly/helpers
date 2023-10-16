@@ -23,16 +23,16 @@ import (
 //	http.Handle("/static/", gowebly.StaticFileServerHandler(http.FS(static)))
 func StaticFileServerHandler(fs http.FileSystem) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// Check, if the requested file is existing.
+		// Check if the requested file exists.
 		_, err := fs.Open(r.URL.Path)
 		if err != nil {
-			// If file is not found, return HTTP 404 error.
+			// If the file is not found, return HTTP 404 error.
 			http.NotFound(w, r)
 			slog.Error(err.Error(), "method", r.Method, "status", http.StatusNotFound, "path", r.URL.Path)
 			return
 		}
 
-		// File is found, return to standard http.FileServer.
+		// File is found, serve it using the standard http.FileServer.
 		http.FileServer(fs).ServeHTTP(w, r)
 	})
 }
