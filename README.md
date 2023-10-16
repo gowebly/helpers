@@ -2,7 +2,7 @@
 
 [![Go version][go_version_img]][go_dev_url]
 [![Go report][go_report_img]][go_report_url]
-[![Code coverage][go_code_coverage_img]][repo_url]
+[![Code coverage][go_code_coverage_img]][go_code_coverage_url]
 [![License][repo_license_img]][repo_license_url]
 
 A most useful helpers for build the best **Go** web applications with [`gowebly`][gowebly_url] CLI.
@@ -130,7 +130,8 @@ http.Handle("/static/", staticFileServer)
 [go_report_url]: https://goreportcard.com/report/github.com/gowebly/helpers
 [go_dev_url]: https://pkg.go.dev/github.com/gowebly/helpers
 [go_version_img]: https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go
-[go_code_coverage_img]: https://img.shields.io/badge/code_coverage-11.5%25-success?style=for-the-badge&logo=none
+[go_code_coverage_url]: https://codecov.io/gh/gowebly/helpers
+[go_code_coverage_img]: https://img.shields.io/codecov/c/gh/gowebly/helpers.svg?logo=codecov&style=for-the-badge
 [go_report_img]: https://img.shields.io/badge/Go_report-A+-success?style=for-the-badge&logo=none
 [go_os_getenv_url]: https://pkg.go.dev/os#Getenv
 
