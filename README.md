@@ -122,7 +122,7 @@ http.Handle("/static/", staticFileServer)
 
 ## ⚠️ License
 
-[The Gowebly Helpers][repo_url] is free and open-source software licensed under the [Apache 2.0 License][repo_license_url], created and supported by [Vic Shóstak][author_url] with 🩵 for people and robots.
+[`The Gowebly Helpers`][repo_url] is free and open-source software licensed under the [Apache 2.0 License][repo_license_url], created and supported by [Vic Shóstak][author_url] with 🩵 for people and robots.
 
 <!-- Go links -->
 
