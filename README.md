@@ -1,11 +1,11 @@
-# Helpers for the `gowebly` CLI (and not so)
+# Helpers for the Gowebly CLI (and not so)
 
 [![Go version][go_version_img]][go_dev_url]
 [![Go report][go_report_img]][go_report_url]
 [![Code coverage][go_code_coverage_img]][go_code_coverage_url]
 [![License][repo_license_img]][repo_license_url]
 
-A most useful helpers for build the best **Go** web applications with [`gowebly`][gowebly_url] CLI.
+A most useful helpers for build the best **Go** web applications with [Gowebly CLI][gowebly_url].
 
 > 💡 Note: You can use these helpers in other projects as well.
 
@@ -25,8 +25,7 @@ import (
 gowebly.Getenv("BACKEND_PORT", "5000")
 ```
 
-> 💡 Note: This is a more advanced version of the built-in
-> [os.Getenv][go_os_getenv_url] function.
+> 💡 Note: This is a more advanced version of the built-in [os.Getenv][go_os_getenv_url] function.
 
 ### `gowebly.ParseTemplates`
 
@@ -123,7 +122,7 @@ http.Handle("/static/", staticFileServer)
 
 ## ⚠️ License
 
-[`gowebly helpers`][repo_url] is free and open-source software licensed under the [Apache 2.0 License][repo_license_url], created and supported by [Vic Shóstak][author_url] with 🩵 for people and robots.
+[The Gowebly Helpers][repo_url] is free and open-source software licensed under the [Apache 2.0 License][repo_license_url], created and supported by [Vic Shóstak][author_url] with 🩵 for people and robots.
 
 <!-- Go links -->
 
