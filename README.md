@@ -128,7 +128,7 @@ http.Handle("/static/", staticFileServer)
 
 [go_report_url]: https://goreportcard.com/report/github.com/gowebly/helpers
 [go_dev_url]: https://pkg.go.dev/github.com/gowebly/helpers
-[go_version_img]: https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go
+[go_version_img]: https://img.shields.io/badge/Go-1.22+-00ADD8?style=for-the-badge&logo=go
 [go_code_coverage_url]: https://codecov.io/gh/gowebly/helpers
 [go_code_coverage_img]: https://img.shields.io/codecov/c/gh/gowebly/helpers.svg?logo=codecov&style=for-the-badge
 [go_report_img]: https://img.shields.io/badge/Go_report-A+-success?style=for-the-badge&logo=none

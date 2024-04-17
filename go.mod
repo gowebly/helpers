@@ -1,3 +1,3 @@
 module github.com/gowebly/helpers
 
-go 1.21
+go 1.22
